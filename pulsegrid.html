@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulsegrid — Uptime and incident monitoring for on-call teams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="pulsegrid.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="status-ticker">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>All systems operational — updated 12s ago</span>
+      </div>
+
+      <nav class="navbar">
+        <a href="#" class="logo">Pulsegrid</a>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#product">Product</a></li>
+          <li><a href="#integrations">Integrations</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn btn-ghost" data-open-modal>
+            Start free trial
+          </button>
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Uptime monitoring, built for on-call</p>
+          <h1>Know the second something breaks. Not the hour after.</h1>
+          <p class="hero-sub">
+            Pulsegrid checks every endpoint, queue, and cron job you run, then
+            pages the right person before your customers notice.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-open-modal>
+              Start free trial
+            </button>
+            <a href="#product" class="btn btn-outline">See how it works</a>
+          </div>
+        </div>
+        <div class="hero-graphic" aria-hidden="true">
+          <svg
+            viewBox="0 0 460 220"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line x1="0" y1="55" x2="460" y2="55" class="grid-line" />
+            <line x1="0" y1="110" x2="460" y2="110" class="grid-line" />
+            <line x1="0" y1="165" x2="460" y2="165" class="grid-line" />
+            <path
+              d="M0,110 L60,110 L80,110 L95,40 L110,180 L125,110 L200,110 L215,110 L230,60 L245,150 L260,110 L340,110 L355,110 L370,90 L385,130 L400,110 L460,110"
+              class="pulse-path"
+            />
+            <circle cx="95" cy="40" r="5" class="pulse-dot pulse-dot-ok" />
+            <circle cx="230" cy="60" r="5" class="pulse-dot pulse-dot-ok" />
+            <circle cx="370" cy="90" r="5" class="pulse-dot pulse-dot-warn" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- Logo strip -->
+      <section class="logo-strip" aria-label="Teams using Pulsegrid">
+        <p>Trusted by engineering teams at</p>
+        <ul class="logo-grid" id="logo-track">
+          <li>Northwind&nbsp;Cloud</li>
+          <li>Fernbank</li>
+          <li>Loopwire</li>
+          <li>Basalt&nbsp;Systems</li>
+          <li>Driftline</li>
+          <li>Anchorhouse</li>
+        </ul>
+      </section>
+
+      <!-- Features -->
+      <section class="features" id="product">
+        <h2>Everything your on-call rotation needs</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M3 12h4l2-7 4 14 2-7h6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h3>Real-time checks</h3>
+            <p>
+              HTTP, TCP, and cron heartbeat checks as often as every 15 seconds,
+              from six global regions.
+            </p>
+          </article>
+          <article class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 2a5 5 0 00-5 5v3.2c0 .6-.2 1.1-.6 1.6L4 15h16l-2.4-3.2c-.4-.5-.6-1-.6-1.6V7a5 5 0 00-5-5z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9.5 19a2.5 2.5 0 005 0"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <h3>Smart alerting</h3>
+            <p>
+              Escalation paths that skip straight to the second on-call after
+              one missed page — no alert fatigue.
+            </p>
+          </article>
+          <article class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 8v4l3 2"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="9"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+            </svg>
+            <h3>Incident timeline</h3>
+            <p>
+              Every check, deploy, and page laid out on one timeline, so
+              postmortems write themselves.
+            </p>
+          </article>
+          <article class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none">
+              <rect
+                x="3"
+                y="4"
+                width="18"
+                height="14"
+                rx="2"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path d="M3 9h18M8 4v14" stroke="currentColor" stroke-width="2" />
+            </svg>
+            <h3>Public status pages</h3>
+            <p>
+              A branded status page your customers can subscribe to, updated the
+              moment you post an incident.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="stats">
+        <div class="stat-block">
+          <p class="stat-number" data-count-to="10842">0</p>
+          <p class="stat-label">checks run every minute</p>
+        </div>
+        <div class="stat-block">
+          <p class="stat-number" data-count-to="99.97" data-decimals="2">0</p>
+          <p class="stat-label">average uptime tracked</p>
+        </div>
+        <div class="stat-block">
+          <p class="stat-number" data-count-to="180">0</p>
+          <p class="stat-label">integrations</p>
+        </div>
+        <div class="stat-block">
+          <p class="stat-number" data-count-to="4">0</p>
+          <p class="stat-label">minute average alert time</p>
+        </div>
+      </section>
+
+      <!-- Integrations directory -->
+      <section class="integrations" id="integrations">
+        <h2>Connects to the tools you already run</h2>
+        <p class="section-sub">
+          Search, filter by category, or sort to find what your stack needs.
+        </p>
+
+        <div class="integrations-controls">
+          <input
+            type="search"
+            id="integration-search"
+            placeholder="Search integrations…"
+            aria-label="Search integrations"
+          />
+          <select id="integration-category" aria-label="Filter by category">
+            <option value="all">All categories</option>
+            <option value="chat">Chat</option>
+            <option value="incident">Incident response</option>
+            <option value="metrics">Metrics</option>
+            <option value="ticketing">Ticketing</option>
+          </select>
+          <select id="integration-sort" aria-label="Sort integrations">
+            <option value="name-asc">Name (A–Z)</option>
+            <option value="name-desc">Name (Z–A)</option>
+            <option value="popular">Most popular</option>
+          </select>
+        </div>
+
+        <ul class="integration-grid" id="integration-grid">
+          <li class="integration-card" data-category="chat" data-popularity="9">
+            <span class="tag tag-chat">Chat</span>
+            <h3>Chatterbox</h3>
+            <p>Alerts posted straight to your team channel.</p>
+          </li>
+          <li
+            class="integration-card"
+            data-category="incident"
+            data-popularity="10"
+          >
+            <span class="tag tag-incident">Incident</span>
+            <h3>Pageflow</h3>
+            <p>Escalations and on-call schedules in one place.</p>
+          </li>
+          <li
+            class="integration-card"
+            data-category="metrics"
+            data-popularity="7"
+          >
+            <span class="tag tag-metrics">Metrics</span>
+            <h3>Graphline</h3>
+            <p>Pipe check latency straight into your dashboards.</p>
+          </li>
+          <li
+            class="integration-card"
+            data-category="ticketing"
+            data-popularity="6"
+          >
+            <span class="tag tag-ticketing">Ticketing</span>
+            <h3>Deskline</h3>
+            <p>Auto-open a ticket the moment a check fails.</p>
+          </li>
+          <li
+            class="integration-card"
+            data-category="incident"
+            data-popularity="8"
+          >
+            <span class="tag tag-incident">Incident</span>
+            <h3>Signalwatch</h3>
+            <p>Group related alerts into a single incident.</p>
+          </li>
+          <li class="integration-card" data-category="chat" data-popularity="5">
+            <span class="tag tag-chat">Chat</span>
+            <h3>Roomcast</h3>
+            <p>Threaded updates for every ongoing incident.</p>
+          </li>
+          <li
+            class="integration-card"
+            data-category="metrics"
+            data-popularity="9"
+          >
+            <span class="tag tag-metrics">Metrics</span>
+            <h3>Metricly</h3>
+            <p>Overlay uptime checks on your own metrics.</p>
+          </li>
+          <li
+            class="integration-card"
+            data-category="ticketing"
+            data-popularity="4"
+          >
+            <span class="tag tag-ticketing">Ticketing</span>
+            <h3>Ticketwise</h3>
+            <p>Sync incident status both ways, automatically.</p>
+          </li>
+          <li class="integration-card" data-category="chat" data-popularity="7">
+            <span class="tag tag-chat">Chat</span>
+            <h3>Beaconstack</h3>
+            <p>Slash commands to snooze or ack an alert.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Pricing -->
+      <section class="pricing" id="pricing">
+        <h2>Pricing that scales with your fleet</h2>
+
+        <div class="pricing-toggle" role="tablist" aria-label="Billing period">
+          <button
+            class="tab-btn active"
+            role="tab"
+            aria-selected="true"
+            data-tab="monthly"
+          >
+            Monthly
+          </button>
+          <button
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            data-tab="yearly"
+          >
+            Yearly <span class="badge">2 months free</span>
+          </button>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Starter</h3>
+            <p class="price">
+              <span class="price-amount">$0</span
+              ><span class="price-period">/mo</span>
+            </p>
+            <p class="price-desc">For side projects and small checks.</p>
+            <ul class="price-features">
+              <li>5 monitors</li>
+              <li>5-minute check interval</li>
+              <li>Email alerts</li>
+            </ul>
+            <button class="btn btn-outline" data-open-modal>
+              Start free trial
+            </button>
+          </article>
+
+          <article class="price-card price-card-featured">
+            <p class="price-highlight">Most popular</p>
+            <h3>Team</h3>
+            <p class="price">
+              <span class="price-amount">$29</span
+              ><span class="price-period">/mo</span>
+            </p>
+            <p class="price-desc">For teams running production services.</p>
+            <ul class="price-features">
+              <li>50 monitors</li>
+              <li>15-second check interval</li>
+              <li>Escalation policies</li>
+              <li>Public status page</li>
+            </ul>
+            <button class="btn btn-primary" data-open-modal>
+              Start free trial
+            </button>
+          </article>
+
+          <article class="price-card">
+            <h3>Scale</h3>
+            <p class="price">
+              <span class="price-amount">$99</span
+              ><span class="price-period">/mo</span>
+            </p>
+            <p class="price-desc">
+              For fleets with multiple on-call rotations.
+            </p>
+            <ul class="price-features">
+              <li>Unlimited monitors</li>
+              <li>Multi-region checks</li>
+              <li>SSO and audit log</li>
+              <li>Priority support</li>
+            </ul>
+            <button class="btn btn-outline" data-open-modal>
+              Start free trial
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials">
+        <h2>What on-call engineers say</h2>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p>
+              "We cut our mean time to acknowledge from nine minutes to under
+              one. The escalation logic is the whole product for us."
+            </p>
+            <p class="testimonial-author">Mara Solheim — Lead SRE, Fernbank</p>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p>
+              "Set up our first ten monitors during a coffee break. The status
+              page alone paid for the subscription."
+            </p>
+            <p class="testimonial-author">
+              Idris Bakalarz — Platform Engineer, Loopwire
+            </p>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars" aria-label="4 out of 5 stars">★★★★☆</div>
+            <p>
+              "Alert fatigue basically disappeared once we tuned the thresholds.
+              Wish the mobile app came a year earlier."
+            </p>
+            <p class="testimonial-author">
+              Priya Nakamura — DevOps Lead, Basalt Systems
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq" id="faq">
+        <h2>Questions, answered</h2>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>How fast are checks?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>
+                As fast as every 15 seconds on the Team and Scale plans, from
+                any of six regions you choose.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>Can I bring my own domain for the status page?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>
+                Yes — point a CNAME at your status page and Pulsegrid issues the
+                certificate automatically.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>Do you support cron and background job monitoring?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>
+                Yes — heartbeat checks work with any scheduled job that can send
+                a ping request when it finishes.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>What happens after the trial ends?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>
+                Your monitors keep running on the Starter plan for free. Nothing
+                is deleted, and there's no card required to begin.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>Is there an API?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>
+                Yes — every action in the dashboard is backed by a REST API,
+                including monitor creation and incident updates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="final-cta">
+        <h2>Ship with confidence</h2>
+        <p>Fourteen days free. No card required. Cancel any time.</p>
+        <button class="btn btn-primary" data-open-modal>
+          Start free trial
+        </button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="logo">Pulsegrid</p>
+          <p>Uptime and incident monitoring for on-call teams.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#product">Features</a></li>
+            <li><a href="#integrations">Integrations</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Status</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Pulsegrid. A practice project — not a real company.</p>
+      </div>
+    </footer>
+
+    <button
+      class="back-to-top"
+      id="back-to-top"
+      aria-label="Back to top"
+      hidden
+    >
+      ↑
+    </button>
+
+    <div class="modal-overlay" id="trial-modal" hidden>
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="modal-close" id="modal-close" aria-label="Close dialog">
+          ×
+        </button>
+        <h3 id="modal-title">Start your free trial</h3>
+        <p>Fourteen days, no card required.</p>
+        <form id="trial-form">
+          <label for="trial-email">Work email</label>
+          <input
+            type="email"
+            id="trial-email"
+            name="email"
+            placeholder="you@company.com"
+            required
+          />
+          <button type="submit" class="btn btn-primary">Create account</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
