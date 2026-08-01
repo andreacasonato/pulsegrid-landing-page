@@ -28,3 +28,21 @@ accordionTriggers.forEach((trigger) => {
     }
   });
 });
+
+// ===== PRICING / MONTHLY-YEARLY TABS =====
+const tabButtons = document.querySelectorAll(".tab-btn");
+
+tabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    // Find the single active button and reset its visual + ARIA state
+    const currentActive = document.querySelector(".tab-btn.active");
+    if (currentActive) {
+      currentActive.classList.remove("active");
+      currentActive.setAttribute("aria-selected", "false");
+    }
+
+    // Set visual + ARIA state for the newly clicked button
+    button.classList.add("active");
+    button.setAttribute("aria-selected", "true");
+  });
+});
