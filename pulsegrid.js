@@ -46,3 +46,36 @@ tabButtons.forEach((button) => {
     button.setAttribute("aria-selected", "true");
   });
 });
+
+// ===== TRIAL MODAL =====
+const modal = document.getElementById("trial-modal");
+const openButtons = document.querySelectorAll("[data-open-modal]");
+const closeButton = document.getElementById("modal-close");
+
+// 1. Define clean, single-responsibility actions
+function openModal() {
+  modal.removeAttribute("hidden");
+}
+
+function closeModal() {
+  modal.setAttribute("hidden", "");
+}
+
+// 2. Attach clean, readable event listeners
+openButtons.forEach((button) => {
+  button.addEventListener("click", openModal);
+});
+
+closeButton.addEventListener("click", closeModal);
+
+modal.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !modal.hasAttribute("hidden")) {
+    closeModal();
+  }
+});
