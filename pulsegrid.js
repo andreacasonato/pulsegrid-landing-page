@@ -79,3 +79,18 @@ document.addEventListener("keydown", (event) => {
     closeModal();
   }
 });
+
+// ===== LOGO SLIDER =====
+const logos = document.querySelectorAll("#logo-track li");
+let currentIndex = 0;
+
+setInterval(() => {
+  // 1. remove 'visible' from the current logo
+  logos[currentIndex].classList.remove("visible");
+
+  // 2. advance currentIndex, wrapping back to 0 at the end
+  currentIndex = (currentIndex + 1) % logos.length;
+
+  // 3. add 'visible' to the new current logo
+  logos[currentIndex].classList.add("visible");
+}, 3000);

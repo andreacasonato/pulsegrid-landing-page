@@ -442,12 +442,23 @@ section {
 .logo-grid {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: var(--space-4);
   margin-top: var(--space-2);
   font-family: var(--font-display);
   font-weight: 600;
   color: var(--muted);
+}
+
+/* Hide all list items by default */
+.logo-grid li {
+  display: none;
+}
+
+/* Override default display for the active item */
+.logo-grid li.visible {
+  display: block; /* or display: inline-block / flex depending on layout */
 }
 
 /* ==========================================================================
