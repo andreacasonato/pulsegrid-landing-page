@@ -94,3 +94,18 @@ setInterval(() => {
   // 3. add 'visible' to the new current logo
   logos[currentIndex].classList.add("visible");
 }, 3000);
+
+// ===== ANIMATED STAT COUNTERS =====
+const statNumbers = document.querySelectorAll(".stat-number");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      console.log("now visible:", entry.target.dataset.countTo);
+      // stop watching this one — it only needs to fire once
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+statNumbers.forEach((stat) => observer.observe(stat));
