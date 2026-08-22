@@ -96,13 +96,37 @@ setInterval(() => {
 }, 3000);
 
 // ===== ANIMATED STAT COUNTERS =====
+function animateCount(element) {
+  const target = parseFloat(element.dataset.countTo);
+  const decimals = Number(element.dataset.decimals || 0);
+  const duration = 1500;
+  let startTime = null;
+
+  function step(timestamp) {
+    if (startTime === null) startTime = timestamp;
+
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    element.textContent = (progress * target).toFixed(decimals);
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
 const statNumbers = document.querySelectorAll(".stat-number");
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      console.log("now visible:", entry.target.dataset.countTo);
-      // stop watching this one — it only needs to fire once
+      // Start the counter
+      animateCount(entry.target);
+
+      // Stop watching this one — it only needs to fire once
       observer.unobserve(entry.target);
     }
   });
