@@ -133,3 +133,34 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 statNumbers.forEach((stat) => observer.observe(stat));
+
+// ===== BACK TO THE TOP BUTTON =====
+const backToTop = document.getElementById("back-to-top");
+
+let scrollTimeout = null;
+
+window.addEventListener("scroll", () => {
+  // A check is already scheduled, so skip this scroll event
+  if (scrollTimeout !== null) return;
+
+  scrollTimeout = setTimeout(() => {
+    // Show the button after scrolling more than 400px
+    if (window.scrollY > 400) {
+      backToTop.hidden = false;
+    } else {
+      backToTop.hidden = true;
+    }
+
+    // Clear the lock so the next scroll can schedule another check
+    scrollTimeout = null;
+  }, 200);
+});
+
+// Smoothly scroll back to the top
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
