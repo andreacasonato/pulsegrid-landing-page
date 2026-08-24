@@ -948,3 +948,13 @@ section {
   gap: var(--space-1);
   z-index: 300;
 }
+
+.toast {
+  background: var(--ink);
+  color: var(--canvas);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}

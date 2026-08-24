@@ -164,3 +164,38 @@ backToTop.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+// ===== TOAST NOTIFICATION SYSTEM =====
+const toastContainer = document.getElementById("toast-container");
+
+function showToast(message) {
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.textContent = message;
+
+  // 1. attach it to the container so it actually appears
+  toastContainer.appendChild(toast);
+
+  // 2. schedule its removal after ~3.5 seconds
+  setTimeout(() => {
+    toast.remove();
+  }, 3500);
+}
+
+// Then, the form handler:
+
+const trialForm = document.getElementById("trial-form");
+
+trialForm.addEventListener("submit", (event) => {
+  // 1. stop the page from actually reloading
+  event.preventDefault();
+
+  // 2. close the modal (using your existing closeModal function)
+  closeModal();
+
+  // 3. show a toast confirming the trial started
+  showToast("Free trial started! Check your email for next steps.");
+
+  // 4. reset the form so the email field is empty next time it opens
+  trialForm.reset();
+});
