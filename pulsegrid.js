@@ -199,3 +199,19 @@ trialForm.addEventListener("submit", (event) => {
   // 4. reset the form so the email field is empty next time it opens
   trialForm.reset();
 });
+
+// ===== SEARCH FEATURE =====
+const searchInput = document.getElementById("integration-search");
+const integrationCards = document.querySelectorAll(".integration-card");
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+
+  integrationCards.forEach((card) => {
+    const name = card.querySelector("h3").textContent.toLowerCase();
+    const matches = name.includes(query);
+
+    // Add .hidden class if matches is false, remove it if matches is true
+    card.classList.toggle("hidden", !matches);
+  });
+});

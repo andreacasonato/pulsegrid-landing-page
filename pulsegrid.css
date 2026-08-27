@@ -600,6 +600,10 @@ section {
   font-size: 0.9rem;
 }
 
+.integration-card.hidden {
+  display: none;
+}
+
 @media (min-width: 700px) {
   .integration-grid {
     grid-template-columns: repeat(2, 1fr);
