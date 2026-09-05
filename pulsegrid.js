@@ -215,3 +215,23 @@ searchInput.addEventListener("input", () => {
     card.classList.toggle("hidden", !matches);
   });
 });
+
+// ===== CATEGORY FILTERING =====
+const categorySelect = document.getElementById("integration-category");
+
+function applyFilters() {
+  const query = searchInput.value.toLowerCase();
+  const selectedCategory = categorySelect.value;
+
+  integrationCards.forEach((card) => {
+    const name = card.querySelector("h3").textContent.toLowerCase();
+    const matchesSearch = name.includes(query);
+    const matchesCategory =
+      selectedCategory === "all" || card.dataset.category === selectedCategory;
+
+    card.classList.toggle("hidden", !(matchesSearch && matchesCategory));
+  });
+}
+
+searchInput.addEventListener("input", applyFilters);
+categorySelect.addEventListener("change", applyFilters);
